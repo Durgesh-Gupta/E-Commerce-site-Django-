@@ -1,0 +1,41 @@
+{%extends 'base.html'%} {%block content%}
+<form action="" method="POST">
+  {%csrf_token%}
+<table>
+  <tr>
+    <th>ProductName</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Qnty</th>
+    <th>Sub-total</th>
+    <th>Delete</th>
+  </tr>
+
+  {%for i in crlist%}
+<tr>
+    <td>
+        {{i.Product.name}}
+    </td>
+    <td>
+        {{i.Product.price}}
+    </td>
+    <td>
+        {{i.Product.desc}}
+    </td>
+    <td>
+<input type="number" value="1">    </td>
+<td>
+    <input type="text" value="{{i.Product.price}}">
+</td>
+<td><a href="">Delete</a></td>
+</tr>
+
+  {%endfor%}
+  <tr>
+      <td colspan="3"><input type="submit" value="PlaceOrder"></td>
+      <td colspan="3">Total Bill:&nbsp; <span style="color: seagreen;">
+        <input type="text" name="totalb" value="{{totalBill}}"></span> </td>
+  </tr>
+</table>
+</form>
+{%endblock%}

@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block content%}
+{%if lmsg is not none%}
+<h2 style="color: red;">{{lmsg}}</h2>
+{%endif%}
+
+<form action="" method="POST">
+    {%csrf_token%}
+    <table>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" name="uname"></td>
+        </tr>  
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="passw"></td>
+        </tr>  
+        <tr>
+            <td><input type="submit" value="submit"></td>
+            <td><input type="reset" value="reset"></td>
+        </tr>
+      </table>
+</form>
+{%endblock%}

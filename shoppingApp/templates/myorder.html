@@ -1,0 +1,29 @@
+{%extends 'base.html'%} {%block content%}
+<table border="1">
+<tr>
+    <th>TtotalBill</th>
+    <th>Status</th>
+    <th>USer</th>
+    <th>OrderDate</th>
+</tr>
+{%for i in orlist%}
+<tr>
+    <td>
+        {{i.totalBill}}
+    </td>
+    <td>
+        {{i.status}}
+    </td>
+    <td>
+        {{i.user}}
+    </td>
+    <td>
+        {{i.orderDate}}
+    </td>
+    
+</tr>
+
+{%endfor%}
+</table>
+
+{%endblock%}

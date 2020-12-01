@@ -1,0 +1,26 @@
+{%for i in pl %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{{i.img}}" width="100%" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">{{i.name}}</a>
+                </h4>
+                <h5>{{i.price}}</h5>
+                {%if user.is_authenticated%}
+                <h5><a href="{%url 'shoppingApp:addtocart' i.id%}">Addtocart</a></h5>
+                {%else%}
+                <h5><a href="{%url 'shoppingApp:login'%}">Addtocart</a></h5>
+                {%endif%}
+                <p class="card-text">
+                 {{i.desc}}
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+            
+
+{%endfor%}
